@@ -1,0 +1,70 @@
+<section class="fondo-login" style="width: 100%; height: 100%;">
+    <div class="limiter animated fadeInLeft">
+        <div class="container-login100">
+            <div class="wrap-login100 p-4 w-50 mw-50">
+                <div class="row">
+                    <div class="col-7 my-auto">
+                        <form (ngSubmit)="login(loginnForm)" #loginnForm='ngForm' class="login100-form validate-form flex-sb flex-w">
+
+                            <span class="login100-form-title pb-2">
+                                Iniciar sesión
+                            </span>
+        
+                            <!-- <span class="text-danger">El correo es obligatorio</span> -->
+                            <div class="wrap-input100 m-b-16">
+                                <input class="input100" 
+                                    type="email" 
+                                    [(ngModel)]="loginform.email"
+                                    email
+                                    required
+                                    name="username" 
+                                    placeholder="Username">
+        
+                                <span class="focus-input100"></span>
+                            </div>
+                            
+                            <!-- <span class="text-danger">La contraseña debe de ser más de 6 letras</span> -->
+                            <div class="wrap-input100 m-b-16" data-validate = "Password is required">
+                                <input class="input100"
+                                    type="password" 
+                                    name="pass" 
+                                    required
+                                    [(ngModel)]="loginform.password"
+                                    placeholder="Password">
+                                <span class="focus-input100"></span>
+                            </div>
+                            
+                            <div class="flex-sb-m w-full p-t-3 p-b-24">
+                                <div class="contact100-form-checkbox">
+                                    <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                                    <label class="label-checkbox100" for="ckb1">
+                                        Recordar mi usuario
+                                    </label>
+                                </div>
+        
+                                <div>
+                                    <a routerLink="/registro" class="txt1">
+                                        ¿No tienes cuenta?
+                                    </a>
+                                </div>
+                            </div>
+        
+                            <div class="container-login100-form-btn m-t-17">
+                                <button class="login100-form-btn" type="submit" *ngIf="!cargando">
+                                    Ingresar
+                                </button>
+                                <button class="login100-form-btn" *ngIf="cargando">
+                                    Esperar ... <i class="fa fa-spin fa-sync"></i>
+                                </button>
+                            </div>
+                            <p class="text-danger text-center errorExter mt-2" *ngIf="showError">Campos incompletos o formalario invalido</p>
+                        </form>
+                    </div>
+                    <div class="col-5 my-auto">
+                        <img src="./assets/images/logo2-transparente.png" class="img-fluid" alt="logo effusis">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

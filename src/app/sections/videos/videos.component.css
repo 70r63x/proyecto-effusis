@@ -1,0 +1,16 @@
+.titulo-categoria{
+    font-family: Ubuntu-Bold;
+    color: #3422d8;
+}
+
+.box-animated:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.box-animated {
+    padding: 0;
+    transition: transform .5s;
+    margin: auto;
+}

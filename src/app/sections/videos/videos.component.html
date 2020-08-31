@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-3" *ngFor="let categoria of videoCategorias">
+      <h2 class="titulo-categoria mb-0">{{categoria.categoria}}</h2>
+      <hr class="mt-1">
+      <div class="row">
+        <div class="col box-animated mx-2" *ngFor="let video of categoria.videos">
+          <img [src]="video.img | safeInsertion: 'resourceUrl'" class="img-fluid" alt="logo effusis" (click)="openVideo(video.url)" style="cursor: pointer;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
